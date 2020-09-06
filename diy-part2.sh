@@ -11,4 +11,11 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+
+echo 'Custom settings'
+sed -i '$i uci set network.lan.ifname="eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.wan.proto=pppoe' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.wan6.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
