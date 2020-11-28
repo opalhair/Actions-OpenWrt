@@ -7,7 +7,8 @@
 # Author: P3TERX
 # Blog: https://p3terx.com
 #=============================================================
-
+rm -rf feeds/packages/net/https-dns-proxy
+svn co https://github.com/openwrt/packages/trunk/net/https-dns-proxy package/openwrt-packages/https-dns-proxy
 # Uncomment a feed source
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
